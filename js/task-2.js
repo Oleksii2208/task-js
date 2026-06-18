@@ -25,8 +25,9 @@ const images = [
   },
 ];
 
-const listEl = document.querySelector(".gallery");
-// console.log(listEl);
+const refs = {
+  listEl: document.querySelector(".gallery"),
+};
 
 function imageTemplate(image) {
   return `<li class='item-gallery'>  <img class='item-gallery-img' style='display: block' src='${image.url}'  alt='${image.alt}' width='360' height='300'></li>`;
@@ -37,4 +38,4 @@ function imagesTemplate(images) {
   return markup;
 }
 
-listEl.insertAdjacentHTML("afterbegin", imagesTemplate(images));
+refs.listEl.insertAdjacentHTML("afterbegin", imagesTemplate(images));

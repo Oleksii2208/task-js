@@ -1,15 +1,14 @@
-const textElem = document.querySelector("p .color");
-const btnElem = document.querySelector(".change-color");
-const body = document.querySelector("body");
+const refs = {
+  textElem: document.querySelector("p .color"),
+  btnElem: document.querySelector(".change-color"),
+  body: document.querySelector("body"),
+};
 
-console.log(body);
-console.log(btnElem);
-
-btnElem.addEventListener("click", onBtnChange);
+refs.btnElem.addEventListener("click", onBtnChange);
 
 function onBtnChange() {
-  textElem.textContent = getRandomHexColor();
-  body.style.backgroundColor = `${textElem.textContent}`;
+  refs.textElem.textContent = getRandomHexColor();
+  refs.body.style.backgroundColor = `${refs.textElem.textContent}`;
 }
 
 function getRandomHexColor() {
